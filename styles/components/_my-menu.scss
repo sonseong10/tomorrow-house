@@ -1,11 +1,34 @@
 .my-menu {
+  $button-size: 32px;
   $shape-size: 12px;
   $contentbox-radius: 4px;
 
   position: relative;
 
+  &-button {
+    width: $button-size;
+    height: $button-size;
+    overflow: hidden;
+    border: 3px solid $white;
+    border-radius: 50%;
+    transition: border-color 200ms ease-in-out;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:hover,
+    &.is-active {
+      border-color: $blue;
+    }
+  }
+
   &-content {
     @include pos-center-x;
+    top: $button-size + $shape-size + 8px;
     border-radius: $contentbox-radius;
     box-shadow: $dropdown-shadow;
 
