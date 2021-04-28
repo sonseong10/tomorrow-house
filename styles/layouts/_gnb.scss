@@ -74,7 +74,7 @@
 
     .logo {
       position: static;
-      margin-right: 32px;
+      margin-right: 32px - ($padding * 2);
       transform: none;
 
       img {
