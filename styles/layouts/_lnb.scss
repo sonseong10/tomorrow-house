@@ -3,12 +3,8 @@
   $lnb-link-padding: 8px;
   $grid-margin: $sm-margin + $gutter / 2;
 
+  @include hide-scrollbar;
   overflow-x: auto;
-
-  // sass-lint:disable no-vendor-prefixes
-  &::-webkit-scrollbar {
-    display: none;
-  }
 
   &-list {
     @include inline-flexbox(center, start);
@@ -21,7 +17,6 @@
 
   &-item {
     position: relative;
-    overscroll-behavior: contain;
 
     &.is-active {
       a {

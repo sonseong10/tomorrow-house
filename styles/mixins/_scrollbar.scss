@@ -1,0 +1,6 @@
+@mixin hide-scrollbar {
+  // sass-lint:disable no-vendor-prefixes
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+}

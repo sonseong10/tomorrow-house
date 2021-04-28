@@ -3,6 +3,7 @@
 .sidebar {
   $sidebar-width: 240px;
 
+  @include hide-scrollbar;
   position: fixed;
   top: 0;
   left: 0;
@@ -100,10 +101,5 @@
         }
       }
     }
-  }
-
-  // sass-lint:disable no-vendor-prefixes
-  &::-webkit-scrollbar {
-    display: none;
   }
 }
