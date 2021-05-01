@@ -1,12 +1,14 @@
 .gnb {
   $padding: 8px;
+  $header-border-size: 1px;
 
   position: relative;
-  border-bottom: 1px solid $border;
+  background-color: $white;
+  border-bottom: $header-border-size solid $border;
 
   &-wrapper {
     @include flexbox(center, between);
-    height: 50px;
+    height: $gnb-height-sm -$header-border-size;
   }
 
   &-right {
@@ -35,6 +37,10 @@
   }
 
   @include responsive(T) {
+    &-wrapper {
+      height: $gnb-height-md -$header-border-size;
+    }
+
     &-left {
       @include flexbox(center, start);
     }
@@ -66,10 +72,6 @@
           }
         }
       }
-    }
-
-    &-wrapper {
-      height: 80px;
     }
 
     .logo {
