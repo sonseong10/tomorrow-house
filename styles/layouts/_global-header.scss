@@ -11,6 +11,7 @@
 
   .gnb {
     top: 0;
+    z-index: $gnb-level;
   }
 
   .lnb {
