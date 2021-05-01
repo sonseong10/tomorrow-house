@@ -7,6 +7,7 @@
 
   @include hide-scrollbar;
   overflow-x: auto;
+  background-color: $white;
 
   &-list {
     @include inline-flexbox(center, start);
