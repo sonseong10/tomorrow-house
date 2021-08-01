@@ -21,6 +21,12 @@
     .detail {
       margin-bottom: 8px;
       color: $primary;
+
+      dd {
+        &.is-answered {
+          color: $blue;
+        }
+      }
     }
 
     .misc {
@@ -35,9 +41,13 @@
   &-body {
     @include text-style(13);
 
-    .question-content {
+    .inquiry-content {
       position: relative;
       padding-left: 20px;
+
+      &:first-child:not(:last-child) {
+        margin-bottom: 12px;
+      }
 
       span {
         position: absolute;
@@ -51,6 +61,19 @@
         color: $primary;
       }
     }
+
+    .seller {
+      @include flexbox(center, start);
+      margin-bottom: 4px;
+
+      strong {
+        margin-right: 4px;
+      }
+
+      time {
+        @include text-style(12, $tertiary);
+      }
+    }
   }
 
   @include responsive(T) {
@@ -61,10 +84,22 @@
     &-body {
       @include text-style(14);
 
-      .question-content {
+      .inquiry-content {
         padding-left: 24px;
 
+        &:first-child:not(:last-child) {
+          margin-bottom: 16px;
+        }
+
         span {
+          @include text-style(16);
+        }
+      }
+
+      .seller {
+        margin-bottom: 8px;
+
+        strong {
           @include text-style(16);
         }
       }
