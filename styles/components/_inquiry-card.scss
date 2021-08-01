@@ -58,7 +58,13 @@
       }
 
       p {
+        @include flexbox(center, start);
         color: $primary;
+
+        i {
+          @include text-style(16, $tertiary);
+          margin-right: 8px;
+        }
       }
     }
 
