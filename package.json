@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/sonseong10/tomorrow-house#readme",
   "dependencies": {
-    "node-sass": "^5.0.0"
+    "node-sass": "^9.0.0"
   }
 }
