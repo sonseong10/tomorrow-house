@@ -14,7 +14,6 @@ orderFormOverlay.addEventListener('click', () => {
   orderFormOverlay.classList.remove('is-active')
 })
 
-console.log(orderCtaBookMarkButton)
 orderCtaBookMarkButton.addEventListener('click', (e) => {
   const [icon, countNode] = e.currentTarget.children
   const count = Number(countNode.innerText.replaceAll(',', ''))
