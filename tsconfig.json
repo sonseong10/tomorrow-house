@@ -13,7 +13,6 @@
   "forceConsistentCasingInFileNames": true,
   "noEmit": true,
   "esModuleInterop": true,
-  "module": "esnext",
   "moduleResolution": "node",
   "resolveJsonModule": true,
   "noImplicitAny": true,
@@ -25,14 +24,11 @@
   "isolatedModules": true,
   "noUnusedParameters": true,
   "assumeChangesOnlyAffectDirectDependencies": true,
-  "jsx": "preserve",
   "verbatimModuleSyntax": true,
   "allowSyntheticDefaultImports": true,
   "noFallthroughCasesInSwitch": true,
   "removeComments": true,
   "incremental": true,
-  "baseUrl": "src",
-  "outDir": "dist",
   "paths": {
     "*": ["./*"]
   },
