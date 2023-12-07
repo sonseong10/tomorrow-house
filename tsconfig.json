@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES5",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "outDir": "build"
+  },
+  "allowJs": true,
+  "checkJs": true,
+  "skipLibCheck": true,
+  "strict": true,
+  "forceConsistentCasingInFileNames": true,
+  "noEmit": true,
+  "esModuleInterop": true,
+  "module": "esnext",
+  "moduleResolution": "node",
+  "resolveJsonModule": true,
+  "noImplicitAny": true,
+  "strictNullChecks": true,
+  "strictBindCallApply": true,
+  "alwaysStrict": true,
+  "allowUnusedLabels": true,
+  "noUnusedLocals": true,
+  "isolatedModules": true,
+  "noUnusedParameters": true,
+  "assumeChangesOnlyAffectDirectDependencies": true,
+  "jsx": "preserve",
+  "verbatimModuleSyntax": true,
+  "allowSyntheticDefaultImports": true,
+  "noFallthroughCasesInSwitch": true,
+  "removeComments": true,
+  "incremental": true,
+  "baseUrl": "src",
+  "outDir": "dist",
+  "paths": {
+    "*": ["./*"]
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "view"]
+}
