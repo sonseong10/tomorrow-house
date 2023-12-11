@@ -1,11 +1,11 @@
-import { TinySliderSettings, tns } from 'tiny-slider'
+import { type TinySliderSettings, tns } from 'tiny-slider';
 
 const commonOptions: TinySliderSettings = {
   navAsThumbnails: true,
   arrowKeys: true,
   mouseDrag: true,
   preventScrollOnTouch: 'force',
-}
+};
 
 const productCarousel = tns({
   ...commonOptions,
@@ -15,7 +15,7 @@ const productCarousel = tns({
   autoplay: true,
   autoplayHoverPause: true,
   autoplayButtonOutput: false,
-} as TinySliderSettings)
+} as TinySliderSettings);
 
 const userGalleryMobile = tns({
   ...commonOptions,
@@ -25,7 +25,7 @@ const userGalleryMobile = tns({
   controls: false,
   navContainer: '.user-gallery.is-mobile .thumbnail-list',
   loop: false,
-} as TinySliderSettings)
+} as TinySliderSettings);
 
 const userGalleryDesktop = tns({
   ...commonOptions,
@@ -36,4 +36,9 @@ const userGalleryDesktop = tns({
   controlsContainer: '.user-gallery.is-desktop .user-gallery-controls',
   navContainer: '.user-gallery.is-desktop .thumbnail-list',
   loop: false,
-} as TinySliderSettings)
+} as TinySliderSettings);
+
+console.log(userGalleryMobile);
+
+userGalleryDesktop;
+export { productCarousel, userGalleryMobile, userGalleryDesktop };
