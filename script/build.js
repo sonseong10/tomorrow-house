@@ -117,7 +117,7 @@ async function build() {
     path.resolve(__dirname, '../index.html'),
     path.join(buildDir, 'index.html')
   )
-  copySync(path.resolve(__dirname, '../js'), path.join(buildDir, 'js'))
+  // copySync(path.resolve(__dirname, '../js'), path.join(buildDir, 'js'))
   copySync(
     path.resolve(__dirname, '../assets/fonts'),
     path.join(buildDir, 'assets/fonts')

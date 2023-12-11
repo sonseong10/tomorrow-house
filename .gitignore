@@ -105,3 +105,6 @@ dist
 
 # Etc
 style.css.map
+
+# npm build
+build

@@ -8,7 +8,7 @@
     "node-sass": "node-sass",
     "sass": "node-sass -wr --source-map true styles/main.scss ./style.css",
     "sass:build": "node-sass -r --source-map true styles/main.scss ./style.css",
-    "build": "node ./script/build.js ",
+    "build": "npx tsc && node ./script/build.js ",
     "deploy": "npm run sass:build && npm run build && node ./script/deploy.js "
   },
   "repository": {
@@ -23,7 +23,10 @@
   },
   "homepage": "https://github.com/sonseong10/tomorrow-house#readme",
   "dependencies": {
-    "node-sass": "^9.0.0"
+    "i": "^0.3.7",
+    "node-sass": "^9.0.0",
+    "npm": "^10.2.5",
+    "tiny-slider": "^2.9.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",

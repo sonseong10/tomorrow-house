@@ -4,7 +4,7 @@
     "target": "ES5",
     "sourceMap": true,
     "experimentalDecorators": true,
-    "outDir": "build"
+    "outDir": "build/js"
   },
   "allowJs": true,
   "checkJs": true,
