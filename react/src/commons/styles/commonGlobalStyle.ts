@@ -1,8 +1,8 @@
 import { css } from "styled-components";
-import type { Theme } from "styles/theme";
+import type { Theme } from "../../styles/theme";
 import { ResetStyle } from "./resetStyle";
 
-export const CommonGlobal = css<{ theme: Theme }>`
+export const CommonGlobal = css<{ theme?: Theme }>`
   ${ResetStyle};
   :root {
     --background-body: ${props => props.theme.colors.bodyBackground};

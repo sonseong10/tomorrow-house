@@ -1,13 +1,13 @@
 import type { AsyncThunk, AsyncThunkPayloadCreator } from "@reduxjs/toolkit";
-import type { AbsIRes } from "commons/Http";
+import type { AbsIRes } from "../../commons/Http";
 import {
   absCreatePageThunk,
   absCreateThunk,
   type AbsAsyncThunkConfig,
   type StatePayloadCodeType,
   useAbsApi,
-} from "commons/store/common";
-import type { Dispatch } from "store/configureStore";
+} from "../../commons/store/common";
+import type { Dispatch } from "../../store/configureStore";
 import type { IState } from ".";
 
 export interface IList<T> {
@@ -33,6 +33,7 @@ export type AsyncThunkConfig = AbsAsyncThunkConfig<IState> & {
 };
 
 export interface IRes<T, P = undefined> extends AbsIRes<T, P> {
+  code: any;
   // AD 공통 사용중 단일 데이터 data, 페이지 데이터 page
   data?: T;
   list?: Array<T>;

@@ -5,8 +5,8 @@ import { apiGtokenInfo, apiPlogin } from "./authR";
 
 import type { IState } from "..";
 import { Grade } from "./authVo";
-import { removeSession } from "commons/storage/storageHook";
-import { useSelectorEq } from "commons/store/common";
+import { removeSession } from "../../../commons/storage/storageHook";
+import { useSelectorEq } from "../../../commons/store/common";
 export interface IUseAuthReturn {
   isLogin: boolean;
   name?: string;
@@ -36,7 +36,6 @@ const useAuth = () => {
     const res = await apiResult(apiPlogin, {
       email: id,
       password: pwd,
-      login_type: "fastview",
     });
     if (res) {
       switch (res.code) {

@@ -1,4 +1,4 @@
-import type { ButtonIcon } from "commons/styles/ComponentsType";
+import type { ButtonIcon } from "../../commons/styles/ComponentsType";
 
 const Delete = (color?: string): string => {
   color = color?.indexOf("#") === -1 ? color : color?.substring(1, color.length);

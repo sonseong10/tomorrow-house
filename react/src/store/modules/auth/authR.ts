@@ -1,5 +1,5 @@
 import { createAppThunk, type IRes } from "../common";
-import { returnRes } from "commons/store/common";
+import { returnRes } from "../../../commons/store/common";
 import {
   Grade,
   type ILoginFetc,
@@ -7,10 +7,10 @@ import {
   type ITokenInfo,
 } from "./authVo";
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { removeSession, setSession } from "commons/storage/storageHook";
-import Http, { HttpR } from "commons/Http";
-import { rdxMain } from "components/layout/nav/store/navigatesR";
-import { GRADE } from "components/layout/nav/store/navigateVo";
+import { removeSession, setSession } from "../../../commons/storage/storageHook";
+import Http, { HttpR } from "../../../commons/Http";
+import { rdxMain } from "../../../components/layout/nav/store/navigatesR";
+import { GRADE } from "../../../components/layout/nav/store/navigateVo";
 /** 리덕스 스토어 이름 설정*/
 const name = "login";
 

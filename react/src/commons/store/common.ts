@@ -3,7 +3,6 @@ import {
   type AsyncThunkPayloadCreator,
   type AsyncThunk,
   type AnyAction,
-  type CombinedState,
   configureStore,
 } from "@reduxjs/toolkit";
 import type { AbsIRes } from "../Http";
@@ -12,7 +11,7 @@ import { useSelector } from "react-redux";
 import { shallowEqual } from "react-redux";
 import { useDispatch } from "react-redux";
 import type { ICommonsStore } from "..";
-import { getLoadingMiddleware } from "commons/loading/store/loadingR";
+import { getLoadingMiddleware } from "../../commons/loading/store/loadingR";
 
 export type ExtraArg<T> = { store: () => T };
 export type AbsAsyncThunkConfig<RootState extends ICommonsStore, T = unknown> = {
@@ -170,7 +169,7 @@ export function returnRes<Res extends AbsIRes<T, K>, T = undefined, K = undefine
  * @returns
  */
 export const createStore = <T extends ICommonsStore>(
-  reducer: (state: T | undefined, action: AnyAction) => CombinedState<T>,
+  reducer: (state: T | undefined, action: AnyAction) => T,
 ) => {
   const store = configureStore({
     // reducer 등록
