@@ -1,4 +1,4 @@
-import { addPopup } from "commons/popup/AbsPopupType";
+import { addPopup } from "../../commons/popup/AbsPopupType";
 import { lazy } from "react";
 
 // NOTE: 팝업타입

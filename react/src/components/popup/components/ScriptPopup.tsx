@@ -1,14 +1,14 @@
-import type { ICommonsStore } from "commons";
-import AbsPopup from "commons/popup/display/AbsPopup";
-import { usePopupData } from "commons/popup/store/absPopupHook";
-import { rdxChangePopupData } from "commons/popup/store/popupR";
-import { useSelectorEq } from "commons/store/common";
-import React, { useEffect } from "react";
+import type { ICommonsStore } from "../../../commons";
+import AbsPopup from "../../../commons/popup/display/AbsPopup";
+import { usePopupData } from "../../../commons/popup/store/absPopupHook";
+import { rdxChangePopupData } from "../../../commons/popup/store/popupR";
+import { useSelectorEq } from "../../../commons/store/common";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { ElementGroup, Title } from "styles/components";
+import { ElementGroup, Title } from "../../../styles/components";
 import { PopupType } from "../PopupType";
-import Button from "components/ui/atom/Button";
+import Button from "../../../components/ui/atom/Button";
 
 const StyleBox = styled.div`
   background-color: var(--btn-disabled);

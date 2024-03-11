@@ -1,4 +1,4 @@
-import SVG from "commons/styles/svgIcon";
+import SVG from "../../../commons/styles/svgIcon";
 import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
 import { AbsPopupType } from "../AbsPopupType";

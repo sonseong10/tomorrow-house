@@ -3,11 +3,17 @@ import { combineReducers } from "redux";
 import { type ICommonsStore } from "../../commons";
 import CommonsSlim from "../../commons/store/CommonsSlim";
 
+
+export interface IInitStates {
+  deviceType: boolean
+}
+
 /**
  * state interface 설정
  */
 export interface IState extends ICommonsStore {
   //
+  init: IInitStates
 }
 
 const defaultReducers = {
