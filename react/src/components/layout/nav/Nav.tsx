@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 // import { Title } from "styles/components";
 import { Link } from "react-router-dom";

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 import { Outlet } from "react-router";
 import styled, { css } from "styled-components";
-import { useContentHeight } from "commons/layers/store/layerHook";
+import { useContentHeight } from "../../commons/layers/store/layerHook";
 import Nav from "./nav/Nav";
 import { useLeft } from "./nav/store/navigatesHook";
 import Header from "./header/Header";

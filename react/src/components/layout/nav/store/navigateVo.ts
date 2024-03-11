@@ -1,4 +1,4 @@
-import type { ButtonIcon } from "commons/styles/ComponentsType";
+import type { ButtonIcon } from "../../../../commons/styles/ComponentsType";
 
 export interface INavigatesVO {
   name: string;

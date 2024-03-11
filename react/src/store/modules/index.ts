@@ -2,6 +2,7 @@ import type { AnyAction, ReducersMapObject } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import { type ICommonsStore } from "../../commons";
 import CommonsSlim from "../../commons/store/CommonsSlim";
+import { INavigates } from "../../components/layout/nav/store/navigatesR";
 
 
 export interface IInitStates {
@@ -13,6 +14,7 @@ export interface IInitStates {
  */
 export interface IState extends ICommonsStore {
   //
+  navigates: INavigates
   init: IInitStates
 }
 

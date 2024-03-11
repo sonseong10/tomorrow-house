@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
 import { useLocation, useMatch, useNavigate } from "react-router-dom";
-import { useSelectorEq } from "commons/store/common";
+import { useSelectorEq } from "../../../../commons/store/common";
 import { rdxIsLeft, rdxMain } from "./navigatesR";
 import { GRADE, type INavigatesVO, mainList } from "./navigateVo";
-import type { IState } from "store/modules";
+import type { IState } from "../../../../store/modules";
 
 /**
  * 권한별 메뉴활성화 Hook

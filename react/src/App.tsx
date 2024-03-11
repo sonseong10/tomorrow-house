@@ -11,6 +11,7 @@ import MainPage from "./pages/main/mainPage";
 import { SMBridgeCallBack } from "./utils/SMBridge";
 import { checkFakePcAgent } from "./store/modules/init/initVo";
 import { useDevice } from "./store/modules/init/initHook";
+import Wrapper from "./components/layout/Wrapper";
 
 function App() {
     const { isDeviceType } = useDevice();
@@ -43,8 +44,15 @@ function App() {
       <LayerController />
       <Suspense fallback={<Spinner text="로딩중입니다." />}>
         <Routes>
-          <Route path="/">
-            <MainPage />
+          <Route path="/" element={<Wrapper />}>
+            <Route
+              index
+              element={
+                <Suspense fallback={<Spinner text="로딩중입니다." />}>
+                  <template />
+                </Suspense>
+              }
+            />
           </Route>
         </Routes>
       </Suspense>

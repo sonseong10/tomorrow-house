@@ -7,7 +7,7 @@ import {
 import type { INavigatesVO } from "./store/navigateVo";
 import styled, { css } from "styled-components";
 import LnbSecItemLink from "./LnbSecItemLink";
-import CurrentSVG from "styles/svgIcon";
+import CurrentSVG from "../../../styles/svgIcon";
 
 const LnbItemLinkCon = styled.li`
   display: flex;
