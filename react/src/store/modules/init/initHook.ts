@@ -24,7 +24,7 @@ export function useSetDevice() {
  */
 export function useDevice() {
   const { deviceType } = useSelectorEq((state: IState) => ({
-    deviceType: state.init.deviceType,
+    deviceType: state.init?.deviceType,
   }));
   const getDeviceType = () => {
     if (deviceType === undefined) {

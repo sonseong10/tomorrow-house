@@ -1,6 +1,6 @@
-import type { IValid } from "commons/ui/useValid";
+import type { IValid } from "../../../commons/ui/useValid";
 import InputText, { type IInputProps, type IInputTextEventParam } from "../InputText";
-import { useInputText } from "commons/ui/reUi/useUihook";
+import { useInputText } from "../../../commons/ui/reUi/useUihook";
 
 /**
  *

@@ -1,7 +1,7 @@
 "use client";
 
-import type { IUseInputEventParam, IUseInput, InputType } from "commons/hook/hookVo";
-import useInput from "commons/hook/useInput";
+import type { IUseInputEventParam, IUseInput, InputType } from "../../commons/hook/hookVo";
+import useInput from "../../commons/hook/useInput";
 import React, { type RefObject, useEffect, useState, type WheelEvent } from "react";
 import styled, { css } from "styled-components";
 

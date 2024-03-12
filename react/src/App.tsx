@@ -49,7 +49,7 @@ function App() {
               index
               element={
                 <Suspense fallback={<Spinner text="로딩중입니다." />}>
-                  <template />
+                  <MainPage />
                 </Suspense>
               }
             />

@@ -70,7 +70,7 @@ function Nav(): JSX.Element {
       </SeerviceWrap>
 
       <LnbScroll active={isLeft}>
-        {topList.map((top: INavigatesVO) => (
+        {topList&& topList.map((top: INavigatesVO) => (
           <LnbTopWrap key={top.id} isActive={top.id === sTop} item={top} />
         ))}
       </LnbScroll>

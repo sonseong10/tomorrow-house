@@ -36,7 +36,7 @@ export const useMain = () => {
  */
 export const useTop = () => {
   const { topList } = useSelectorEq((state: IState) => ({
-    topList: state.navigates.topList,
+    topList: state?.navigates?.topList,
   }));
   return { topList };
 };
@@ -68,7 +68,7 @@ export const useSetTopSelected = () => {
  */
 export const useLeft = () => {
   const { isLeft } = useSelectorEq((state: IState) => ({
-    isLeft: state.navigates.isLeft,
+    isLeft: state.navigates?.isLeft,
   }));
   const dispatch = useDispatch();
   const activeLeft = async (active: boolean) => {

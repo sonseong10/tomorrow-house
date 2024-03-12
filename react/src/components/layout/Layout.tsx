@@ -2,9 +2,8 @@ import  { useEffect, useRef } from "react";
 import { Outlet } from "react-router";
 import styled, { css } from "styled-components";
 import { useContentHeight } from "../../commons/layers/store/layerHook";
-import Nav from "./nav/Nav";
-import { useLeft } from "./nav/store/navigatesHook";
 import Header from "./header/Header";
+
 
 const Container = styled.div<{ active: boolean }>`
   display: flex;
@@ -32,7 +31,6 @@ const Content = styled.section`
 `;
 
 function Layout(): JSX.Element {
-  const { isLeft } = useLeft();
   const { set } = useContentHeight();
   const contentRef = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -46,8 +44,7 @@ function Layout(): JSX.Element {
   return (
     <>
       <Header />
-      <Container active={isLeft}>
-        <Nav />
+      <Container active={false} id="container">
         <Content ref={contentRef}>
           <Outlet />
         </Content>
