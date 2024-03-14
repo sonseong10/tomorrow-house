@@ -12,6 +12,7 @@ import { SMBridgeCallBack } from "./utils/SMBridge";
 import { checkFakePcAgent } from "./store/modules/init/initVo";
 import { useDevice } from "./store/modules/init/initHook";
 import Wrapper from "./components/layout/Wrapper";
+import MarketPage from "./pages/market/marketPage";
 
 function App() {
     const { isDeviceType } = useDevice();
@@ -49,7 +50,15 @@ function App() {
               index
               element={
                 <Suspense fallback={<Spinner text="로딩중입니다." />}>
-                  <MainPage />
+                  <MainPage/>
+                </Suspense>
+              }
+            />
+            <Route
+              path="store"
+              element={
+                <Suspense fallback={<Spinner text="로딩중입니다." />}>
+                  <MarketPage />
                 </Suspense>
               }
             />
