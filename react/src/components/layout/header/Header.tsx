@@ -9,6 +9,7 @@ const HeaderContainer = styled.header`
   position: sticky;
   top: 0;
   border-bottom: 1px solid #EAEDEF;
+  background-color: #fff;
   z-index: 7;
 
   > div {
@@ -21,7 +22,6 @@ const HeaderContainer = styled.header`
     padding: 10px 60px;
     max-width: 1256px;
     margin: 0 auto;
-    background-color: #fff;
 
     h1 {
       img {
@@ -108,38 +108,96 @@ const HeaderContainer = styled.header`
   }
 }`;
 
+const SubCategoryWrapper = styled.nav`
+  border-bottom: 1px solid #EAEDEF;
+  background-color: #fff;
+  nav {
+    padding: 0 60px;
+    max-width: 1256px;
+    margin: 0 auto;
+    ul {
+      display: flex;
+      li {
+        position: relative;
+        margin: 0 5px;
+        padding: 12px 6px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: var(--font-primary);
+        cursor: pointer;
+
+        &:hover {
+          color: var(--primary);
+        }
+
+        &:first-child{
+          color: var(--primary);
+          &::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+            content: "";
+          }
+        }
+      }
+    }
+  }
+`
+
+function SubCategory():JSX.Element {
+  const data:{name: string; loaction?: string}[] = [
+    {name:"쇼핑홈", loaction: undefined},
+    {name:"카테고리", loaction: undefined},
+    {name:"베스트", loaction: undefined},
+    {name:"오늘의딜", loaction: undefined}
+  ]
+  return <SubCategoryWrapper>
+    <nav>
+      <ul>
+        {data.map((item, index)=> <li key={index}>{item.loaction ? <Link to={item.loaction}>{item.name}</Link> : item.name}</li>)}
+      </ul>
+    </nav>
+  </SubCategoryWrapper>
+}
 
 function Header() {
   return (
-  <HeaderContainer>
-    <div>
-      <h1 className="logo">
-        <Link to="/">
-          <img src={Logo} alt="내일의 집" />
-        </Link>
-      </h1>
-
-      <div className="gnb-left">
-        <Link to={"/"}>커뮤니티</Link>
-        <Link to={"/"} className="isActive">쇼핑</Link>
-        <Link to={"/"}>인테리어/생활</Link>
-      </div>
-
-      <div className="gnb-right">
-        <div className="search-wrapper">
-          <UiInputText id="search" type="text" placeholder="상품검색" />
-        </div>
-        <div className="auth-group">
-          <Link to="/cart" className="cart-icon">
+  <>
+    <HeaderContainer>
+      <div>
+        <h1 className="logo">
+          <Link to="/">
+            <img src={Logo} alt="내일의 집" />
           </Link>
-          <Link to="/">로그인</Link>
-          <Link to="/">회원가입</Link>
-          <Link to="/">고객센터</Link>
+        </h1>
+
+        <div className="gnb-left">
+          <Link to={"/"}>커뮤니티</Link>
+          <Link to={"/"} className="isActive">쇼핑</Link>
+          <Link to={"/"}>인테리어/생활</Link>
         </div>
-        <Button text="글쓰기" color="primary" iconName="DownArrow" iconPosition="after"/>
+
+        <div className="gnb-right">
+          <div className="search-wrapper">
+            <UiInputText id="search" type="text" placeholder="상품 검색" />
+          </div>
+          <div className="auth-group">
+            <Link to="/cart" className="cart-icon">
+            </Link>
+            <Link to="/">로그인</Link>
+            <Link to="/">회원가입</Link>
+            <Link to="/">고객센터</Link>
+          </div>
+          <Button text="글쓰기" color="primary" iconName="DownArrow" iconPosition="after"/>
+        </div>
       </div>
-    </div>
-  </HeaderContainer>
+    </HeaderContainer>
+    <SubCategory />
+  </>
   );
 }
 

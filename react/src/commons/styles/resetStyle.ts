@@ -379,16 +379,6 @@ export const ResetStyle = css`
     display: none;
   }
 
-  ::-moz-selection {
-    background: #fcccca;
-    text-shadow: none;
-  }
-
-  ::selection {
-    background: #fcccca;
-    text-shadow: none;
-  }
-
   pre {
     width: 100%;
     max-height: 200px;
