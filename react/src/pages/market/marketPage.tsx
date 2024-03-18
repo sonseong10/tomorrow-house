@@ -19,8 +19,13 @@ const PcCarousel = styled.div`
   width: 100%;
 `
 
+function CategoryList() {
+  const list = ["주방특가",                "BEST","오늘의딜","오픈런딜","행운출첵","프리미엄","초특가견적","득템찬스","오!쇼룸","특가/혜택"]
+  return <></>
+}
+
 function MarketPage() {
-   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore | null>(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore | null>(null);
   let initSetting: SwiperProps;
   const initControl: SwiperProps = {
     onSwiper: setThumbsSwiper,
@@ -46,6 +51,8 @@ function MarketPage() {
               );
             })}
     </Swiper>
+
+    <CategoryList/>
   </>
 }
 export default MarketPage

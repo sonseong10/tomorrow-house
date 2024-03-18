@@ -16,7 +16,7 @@ export default function UiInputText(props: IUiInputTextProps): JSX.Element {
   const { inputTextValue, changeValue } = useInputText({
     id: props.id,
     valid: props.valid,
-    init: props.init,
+    init: props.init, 
   });
 
   const inputChange = (e: IInputTextEventParam) => {
