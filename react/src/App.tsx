@@ -62,6 +62,14 @@ function App() {
                 </Suspense>
               }
             />
+            <Route
+              path="experts"
+              element={
+                <Suspense fallback={<Spinner text="로딩중입니다." />}>
+                  <></>
+                </Suspense>
+              }
+            />
           </Route>
         </Routes>
       </Suspense>

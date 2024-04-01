@@ -178,7 +178,7 @@ function Header() {
         <div className="gnb-left">
           <Link to={"/"}>커뮤니티</Link>
           <Link to={"/store"} className="isActive">쇼핑</Link>
-          <Link to={"/"}>인테리어/생활</Link>
+          <Link to={"/experts"}>인테리어/생활</Link>
         </div>
 
         <div className="gnb-right">
