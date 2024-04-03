@@ -1,16 +1,16 @@
-import { rdxPopupOpen } from "commons/popup/store/popupR";
-import { ButtonState } from "commons/popup/store/absPopupVo";
-import { useDispatch } from "react-redux";
-import { PopupType } from "./PopupType";
-import { useAbsAlert, useAbsConfirm } from "commons/popup/store/absPopupHook";
+import {rdxPopupOpen} from '../../commons/popup/store/popupR';
+import {ButtonState} from '../../commons/popup/store/absPopupVo';
+import {useDispatch} from 'react-redux';
+import {PopupType} from './PopupType';
+import {useAbsAlert, useAbsConfirm} from '../../commons/popup/store/absPopupHook';
 import {
   AlertPopupButtonGroup,
   ConfirmPopupButtonGroup,
   DeletePopupButtonGroup,
   type IconPopupProps,
-} from "./components/IconPopup";
-import { ScriptPopupButton } from "./components/ScriptPopup";
-import Button from "components/ui/atom/Button";
+} from './components/IconPopup';
+import {ScriptPopupButton} from './components/ScriptPopup';
+import Button from '../../components/ui/atom/Button';
 
 /**
  * Popup 컴포넌트 callBack type
@@ -22,10 +22,10 @@ export interface IProductCallBack<U> {
   list: Array<U>;
 }
 const commonButton = {
-  color: "primary",
-  btnSize: "md",
+  color: 'primary',
+  btnSize: 'md',
   ellipsis: true,
-  maxWidth: "125px",
+  maxWidth: '125px',
 };
 
 /**
@@ -33,7 +33,7 @@ const commonButton = {
  * @deprecated width 팝업사이즈 겟샵에서 사용을 위해 사용중인 수정예정
  */
 export function useAlert(width?: string | number) {
-  const { alert } = useAbsAlert(Button, width);
+  const {alert} = useAbsAlert(Button, width);
   return alert;
 }
 
@@ -41,7 +41,7 @@ export function useAlert(width?: string | number) {
  * window.confirm()용 어드민 레이어팝업
  */
 export function useConfirm() {
-  const { confirm } = useAbsConfirm(Button);
+  const {confirm} = useAbsConfirm(Button);
   return confirm;
 }
 
@@ -54,7 +54,7 @@ export function useImagePopup() {
     dispatch(
       rdxPopupOpen({
         type: PopupType.IMAGE,
-        title: "이미지 미리보기",
+        title: '이미지 미리보기',
         data,
         isClose: true,
         callBack: callBack,
@@ -69,11 +69,7 @@ export function useImagePopup() {
  */
 export function useGridPopup() {
   const dispatch = useDispatch();
-  const GridPopup = async <T>(
-    data?: T,
-    title?: string,
-    callBack?: () => void
-  ) => {
+  const GridPopup = async <T>(data?: T, title?: string, callBack?: () => void) => {
     dispatch(
       rdxPopupOpen({
         width: 540,
@@ -83,7 +79,7 @@ export function useGridPopup() {
         // isClose: true,
         callBack: callBack,
         buttonComponent: Button,
-        buttons: [{ ...commonButton, text: "확인", state: ButtonState.OK }],
+        buttons: [{...commonButton, text: '확인', state: ButtonState.OK}],
       })
     );
   };
@@ -97,18 +93,18 @@ export function useGridPopup() {
 export function useIConPopup() {
   const dispatch = useDispatch();
   const IconPopup = async (
-    buttonType: "alert" | "confirm" | "delete" = "alert",
+    buttonType: 'alert' | 'confirm' | 'delete' = 'alert',
     data?: IconPopupProps,
     title?: string,
     callBack?: (v?: ButtonState) => void
   ) => {
     const ButtonComponent = () => {
       switch (buttonType) {
-        case "delete":
+        case 'delete':
           return DeletePopupButtonGroup;
-        case "confirm":
+        case 'confirm':
           return ConfirmPopupButtonGroup;
-        case "alert":
+        case 'alert':
         default:
           return AlertPopupButtonGroup;
       }
@@ -137,7 +133,7 @@ export const useScriptPopup = () => {
 
   return async (
     data?: {
-      type: "getshop" | "viewus" | "car" | "ad";
+      type: 'getshop' | 'viewus' | 'car' | 'ad';
       code: string | number;
     },
     title?: string,

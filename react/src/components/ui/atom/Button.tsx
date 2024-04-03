@@ -8,7 +8,6 @@ import type {
   ButtonType,
 } from "../../../commons/styles/ComponentsType";
 import SVG from "../../../commons/styles/svgIcon";
-import CurrentSVG from "../../../styles/svgIcon";
 
 const BtnCommon = css<{
   thin?: boolean;
