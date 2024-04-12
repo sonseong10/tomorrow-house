@@ -11,9 +11,10 @@ import {SMBridgeCallBack} from './utils/SMBridge';
 import {checkFakePcAgent} from './store/modules/init/initVo';
 import {useDevice} from './store/modules/init/initHook';
 import Wrapper from './components/layout/Wrapper';
-import MarketPage from './pages/market/marketPage';
 
 const MainPage = lazy(() => import('./pages/main/mainPage'));
+const MarketPage = lazy(() => import('./pages/market/marketPage')) ;
+const ProductDetail = lazy(()=> import('./pages/product/detail'));
 
 function App() {
   const {isDeviceType} = useDevice();
@@ -61,6 +62,14 @@ function App() {
                 element={
                   <Suspense fallback={<Spinner text="로딩중입니다." />}>
                     <MarketPage />
+                  </Suspense>
+                }
+              />
+              <Route
+                path='productions/*'
+                element={
+                  <Suspense fallback={<Spinner text="로딩중입니다." />}>
+                    <ProductDetail />
                   </Suspense>
                 }
               />

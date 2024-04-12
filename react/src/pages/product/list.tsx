@@ -50,7 +50,7 @@ export function ProductList({products}: IProductListProps) {
     <ProductCardList>
       {products?.map((product) => (
         <li key={product.code}>
-          <Link to={'/store'}>
+          <Link to={`/productions/${product.code}`}>
             <div>
               <img src={product.imageURL} alt={product.name} />
             </div>
