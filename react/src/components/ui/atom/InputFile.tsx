@@ -99,29 +99,25 @@ function InputFile(props: IInputFileProps): JSX.Element {
         type="file"
         ref={inputfile}
         id={id}
-        accept={props.accept ? props.accept : ".gif, .jpg, .png"}
-        style={{ visibility: "hidden", width: "0px" }}
+        accept={props.accept ? props.accept : '.gif, .jpg, .png'}
+        style={{visibility: 'hidden', width: '0px'}}
         onChange={changeImageFile}
         multiple={props.multiple ? props.multiple : false}
       />
       <InputText id="filetext" value={props.filename} disabled={true} />
-      {props.type && props.type === "ICON" ? (
+      {props.type && props.type === 'ICON' ? (
         <Button
           title="등록"
           onClick={clickHandler}
-          btnSize="xsm"
-          iconName="Edit"
-          iconPosition="center"
+          btnsize="xsm"
+          iconname="Edit"
+          iconposition="center"
           color="white"
-          btnType="border"
+          btntype="border"
           thin
         />
       ) : (
-        <Button
-          text={props.buttonText ? props.buttonText : "등록"}
-          onClick={clickHandler}
-          btnSize="xsm"
-        />
+        <Button text={props.buttonText ? props.buttonText : '등록'} onClick={clickHandler} btnsize="xsm" />
       )}
     </>
   );

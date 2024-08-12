@@ -81,9 +81,9 @@ export const Text = styled.p<{
  * Row(가로 방향으로 자식 엘리먼트 배치), Col(세로방향으로 배치) <InputGroup.Row></InputGroup.Row>
  */
 interface IElementGroup {
-  flexAlign?: "start" | "center" | "end" | "strech";
+  flexAlign?: 'start' | 'center' | 'end' | 'strech';
   flexWrap?: boolean;
-  flexContent?: "start" | "center" | "end" | "between" | "around";
+  flexcontent?: 'start' | 'center' | 'end' | 'between' | 'around';
 }
 
 export const ElementGroup = {

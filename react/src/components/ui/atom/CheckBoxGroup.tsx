@@ -71,10 +71,10 @@ interface IInputCheckBoxProps {
   change?: (isAll: boolean, selected: Array<string>) => void;
 }
 
-function CheckBoxGroup(props: IInputCheckBoxProps): JSX.Element {
-  const allCount = props.data?.filter(item => !item.isAll).length;
+function CheckBoxGroupMemo(props: IInputCheckBoxProps): JSX.Element {
+  const allCount = props.data?.filter((item) => !item.isAll).length;
   const isAll = props.selected?.length === allCount;
-  const hasAll = props.data?.filter(item => item.isAll);
+  const hasAll = props.data?.filter((item) => item.isAll);
 
   const change = (value: boolean, id?: string) => {
     if (hasAll !== undefined && hasAll[0].id === id) {
@@ -82,9 +82,7 @@ function CheckBoxGroup(props: IInputCheckBoxProps): JSX.Element {
         if (props.change) {
           props.change(
             value,
-            (props.data as Array<ICheckBox>)
-              .filter(item => !item.isAll)
-              .map(item => item.id)
+            (props.data as Array<ICheckBox>).filter((item) => !item.isAll).map((item) => item.id),
           );
         }
       } else {
@@ -109,7 +107,7 @@ function CheckBoxGroup(props: IInputCheckBoxProps): JSX.Element {
   };
   return (
     <CheckBoxGroupStyle isBelong={props.isBelong} direction={props.direction}>
-      {props.data?.map(item => (
+      {props.data?.map((item) => (
         <CheckBox
           key={item.id as unknown as string}
           onlyBox={props.onlyBox}
@@ -124,7 +122,8 @@ function CheckBoxGroup(props: IInputCheckBoxProps): JSX.Element {
   );
 }
 
-export default React.memo(CheckBoxGroup);
+const CheckBoxGroup = React.memo(CheckBoxGroupMemo);
+export default CheckBoxGroup;
 
 export interface IUiCheckBoxProps {
   name: string;

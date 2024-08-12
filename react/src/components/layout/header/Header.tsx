@@ -166,38 +166,39 @@ function SubCategory():JSX.Element {
 
 function Header() {
   return (
-  <>
-    <HeaderContainer>
-      <div>
-        <h1 className="logo">
-          <Link to="/">
-            <img src={Logo} alt="내일의 집" />
-          </Link>
-        </h1>
-
-        <div className="gnb-left">
-          <Link to={"/"}>커뮤니티</Link>
-          <Link to={"/store"} className="isActive">쇼핑</Link>
-          <Link to={"/experts"}>인테리어/생활</Link>
-        </div>
-
-        <div className="gnb-right">
-          <div className="search-wrapper">
-            <UiInputText id="search" type="text" placeholder="상품 검색" />
-          </div>
-          <div className="auth-group">
-            <Link to="/cart" className="cart-icon">
+    <>
+      <HeaderContainer>
+        <div>
+          <h1 className="logo">
+            <Link to="/">
+              <img src={Logo} alt="내일의 집" />
             </Link>
-            <Link to="/">로그인</Link>
-            <Link to="/">회원가입</Link>
-            <Link to="/">고객센터</Link>
+          </h1>
+
+          <div className="gnb-left">
+            <Link to={'/'}>커뮤니티</Link>
+            <Link to={'/store'} className="isActive">
+              쇼핑
+            </Link>
+            <Link to={'/experts'}>인테리어/생활</Link>
           </div>
-          <Button text="글쓰기" color="primary" iconName="DownArrow" iconPosition="after"/>
+
+          <div className="gnb-right">
+            <div className="search-wrapper">
+              <UiInputText id="search" type="text" placeholder="상품 검색" />
+            </div>
+            <div className="auth-group">
+              <Link to="/cart" className="cart-icon"></Link>
+              <Link to="/">로그인</Link>
+              <Link to="/">회원가입</Link>
+              <Link to="/">고객센터</Link>
+            </div>
+            <Button text="글쓰기" color="primary" iconname="DownArrow" iconposition="after" />
+          </div>
         </div>
-      </div>
-    </HeaderContainer>
-    <SubCategory />
-  </>
+      </HeaderContainer>
+      <SubCategory />
+    </>
   );
 }
 

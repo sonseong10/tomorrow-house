@@ -2,11 +2,11 @@ import { useDevice } from "../../store/modules/init/initHook";
 import styled, { css } from "styled-components";
 import Layout from "./Layout";
 
-const Wrap = styled.div<{ device: boolean }>`
+const Wrap = styled.div<{device: boolean}>`
   width: 100%;
   background-color: var(--backgroundBody);
 
-  ${props => {
+  ${(props) => {
     switch (props.device) {
       case true:
         return css`
@@ -38,11 +38,11 @@ const Wrap = styled.div<{ device: boolean }>`
 `;
 
 function Wrapper(): JSX.Element {
-  const { isDeviceType } = useDevice();
+  const {isDeviceType} = useDevice();
 
   return (
     <Wrap device={isDeviceType}>
-      <Layout></Layout>
+      <Layout />
     </Wrap>
   );
 }

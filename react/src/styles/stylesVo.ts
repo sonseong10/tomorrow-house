@@ -9,13 +9,7 @@ export type FontWeightType =
   | undefined;
 export type FontAlignType = "center" | "right" | "left" | undefined;
 export type FlexAlignType = "start" | "center" | "end" | "strech" | undefined;
-export type FlexContentType =
-  | "start"
-  | "center"
-  | "end"
-  | "between"
-  | "around"
-  | undefined;
+export type flexcontentType = 'start' | 'center' | 'end' | 'between' | 'around' | undefined;
 export type Size =
   | "xs"
   | "xsm"

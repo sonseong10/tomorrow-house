@@ -216,7 +216,7 @@ function AbsPopupButtonList(props: { type: AbsPopupType | string; device: boolea
             <Button
               key={idx}
               {...item}
-              btnType={item.state ? "normal" : "border"}
+              btntype={item.state ? 'normal' : 'border'}
               isRadius
               onClick={close.bind(null, item?.state, undefined)}
             />

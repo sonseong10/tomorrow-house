@@ -94,10 +94,10 @@ interface ICheckBoxProps {
   disabled?: boolean;
 }
 
-function CheckBox(props: ICheckBoxProps): JSX.Element {
+function CheckBoxMemo(props: ICheckBoxProps): JSX.Element {
   const [value, setValue] = useState<boolean>(props.value ? true : false);
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { checked } = e.target;
+    const {checked} = e.target;
     setValue(checked);
     if (props.change) {
       props.change(checked, props.id);
@@ -117,12 +117,14 @@ function CheckBox(props: ICheckBoxProps): JSX.Element {
         disabled={props.disabled}
       />
       <i />
-      {props.text ? props.text : ""}
+      {props.text ? props.text : ''}
     </InputCheckBoxItem>
   );
 }
 
-export default React.memo(CheckBox);
+const CheckBox = React.memo(CheckBoxMemo);
+
+export default CheckBox;
 
 type IUiCheckBoxProps = Omit<ICheckBoxProps, "id"> & {
   id: string;

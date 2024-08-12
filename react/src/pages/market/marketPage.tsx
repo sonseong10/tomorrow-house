@@ -92,8 +92,8 @@ function CategoryList() {
 }
 
 function MarketPage() {
-  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore | null>(null);
-  console.log(thumbsSwiper);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_, setThumbsSwiper] = useState<SwiperCore | null>(null);
 
   // let initSetting: SwiperProps;
   const initControl: SwiperProps = {
@@ -133,7 +133,7 @@ function MarketPage() {
       </PcContainer>
 
       <PcContainer>
-        <ElementGroup.Row flexContent="between">
+        <ElementGroup.Row flexcontent="between">
           <Title size="md">인기상품</Title>
 
           <UiSelectBox
@@ -149,29 +149,29 @@ function MarketPage() {
         <ProductList
           products={[
             {
-              code: '32ds92s',
+              code: '3h2ds92s1',
               name: '논슬립 어깨뿔방지 옷걸이 30개 5colors 외 옷걸이/바지걸이 모음',
               price: 18900,
               discount: 62,
               supplierName: '진심감성 (리빙)',
               imageURL:
-              'https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/167772098062783381.png?gif=1&w=1280&h=1280&c=c&webp=1',
+                'https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/167772098062783381.png?gif=1&w=1280&h=1280&c=c&webp=1',
               grade: 4.8,
               reviewCount: 25498,
             },
             {
-              code: '32ds92s',
+              code: '32ds92sd',
               name: '1+1 독일토분 공기정화식물 마오리소포라 율마 몬스테라 유칼립투스',
               price: 18000,
               discount: 30,
               supplierName: '필플랜드',
               imageURL:
-              'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/165786292549269852.jpg?gif=1&w=1280&h=1280&c=c&webp=1',
+                'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/165786292549269852.jpg?gif=1&w=1280&h=1280&c=c&webp=1',
               grade: 4.8,
               reviewCount: 2409,
             },
             {
-              code: '32ds92s',
+              code: '32ds92s1',
               name: '키노 LED 미니 머쉬룸 무선 무드등 조명 인테리어 2sizes(밝기/빛색상 변경)',
               price: 27400,
               discount: 54,
@@ -182,7 +182,7 @@ function MarketPage() {
               reviewCount: 25498,
             },
             {
-              code: '32ds92s',
+              code: '32ds92s13',
               name: '쿠폰가 101,370/편안한 제주 25cm 필로우탑 본넬스프링 침대 매트리스S/SS/Q/K',
               price: 109000,
               discount: 45,
@@ -193,7 +193,7 @@ function MarketPage() {
               reviewCount: 18951,
             },
             {
-              code: '32ds92s',
+              code: '32ds92s21',
               name: '[예약판매]페블 체어 미드센추리 패브릭 디자인 인테리어 철제 의자',
               price: 54900,
               discount: 39,
@@ -204,29 +204,29 @@ function MarketPage() {
               reviewCount: 411,
             },
             {
-              code: '32ds92s',
+              code: '32ds923s1',
               name: '논슬립 어깨뿔방지 옷걸이 30개 5colors 외 옷걸이/바지걸이 모음',
               price: 18900,
               discount: 62,
               supplierName: '진심감성 (리빙)',
               imageURL:
-              'https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/167772098062783381.png?gif=1&w=1280&h=1280&c=c&webp=1',
+                'https://image.ohou.se/i/bucketplace-v2-development/uploads/deals/167772098062783381.png?gif=1&w=1280&h=1280&c=c&webp=1',
               grade: 4.8,
               reviewCount: 25498,
             },
             {
-              code: '32ds92s',
+              code: '32ds912s1',
               name: '1+1 독일토분 공기정화식물 마오리소포라 율마 몬스테라 유칼립투스',
               price: 18000,
               discount: 30,
               supplierName: '필플랜드',
               imageURL:
-              'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/165786292549269852.jpg?gif=1&w=1280&h=1280&c=c&webp=1',
+                'https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/165786292549269852.jpg?gif=1&w=1280&h=1280&c=c&webp=1',
               grade: 4.8,
               reviewCount: 2409,
             },
             {
-              code: '32ds92s',
+              code: '32ds942s1',
               name: '키노 LED 미니 머쉬룸 무선 무드등 조명 인테리어 2sizes(밝기/빛색상 변경)',
               price: 27400,
               discount: 54,
@@ -237,7 +237,7 @@ function MarketPage() {
               reviewCount: 25498,
             },
             {
-              code: '32ds92s',
+              code: '32ds9f2s1',
               name: '쿠폰가 101,370/편안한 제주 25cm 필로우탑 본넬스프링 침대 매트리스S/SS/Q/K',
               price: 109000,
               discount: 45,
@@ -248,7 +248,7 @@ function MarketPage() {
               reviewCount: 18951,
             },
             {
-              code: '32ds92s',
+              code: '321ds92s1',
               name: '[예약판매]페블 체어 미드센추리 패브릭 디자인 인테리어 철제 의자',
               price: 54900,
               discount: 39,

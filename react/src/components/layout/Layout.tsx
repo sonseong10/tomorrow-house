@@ -5,9 +5,13 @@ import { useContentHeight } from "../../commons/layers/store/layerHook";
 import Header from "./header/Header";
 
 
-const Container = styled.div<{ active: boolean }>`
+const Container = styled.div<{active: boolean}>`
   position: relative;
-
+  width: 100%;
+  max-width: 1156px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: auto;
 `;
 
 const Content = styled.section`
@@ -22,20 +26,17 @@ const Content = styled.section`
 `;
 
 function Layout(): JSX.Element {
-  const { set } = useContentHeight();
+  const {set} = useContentHeight();
   const contentRef = useRef<HTMLElement>(null);
   useEffect(() => {
     set(() => {
       return contentRef.current?.getBoundingClientRect() as DOMRect;
     });
-  }, [contentRef]);
-  // set(() => {
-  //   return contentRef.current?.getBoundingClientRect() as DOMRect;
-  // });
+  }, [set]);
   return (
     <>
       <Header />
-      <Container active={false} id="container">
+      <Container active id="container">
         <Content ref={contentRef}>
           <Outlet />
         </Content>

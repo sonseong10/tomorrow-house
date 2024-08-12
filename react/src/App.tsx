@@ -11,10 +11,11 @@ import {SMBridgeCallBack} from './utils/SMBridge';
 import {checkFakePcAgent} from './store/modules/init/initVo';
 import {useDevice} from './store/modules/init/initHook';
 import Wrapper from './components/layout/Wrapper';
+import Header from './components/layout/header/Header';
 
 const MainPage = lazy(() => import('./pages/main/mainPage'));
-const MarketPage = lazy(() => import('./pages/market/marketPage')) ;
-const ProductDetail = lazy(()=> import('./pages/product/detail'));
+const MarketPage = lazy(() => import('./pages/market/marketPage'));
+const ProductDetail = lazy(() => import('./pages/product/detail'));
 
 function App() {
   const {isDeviceType} = useDevice();
@@ -46,44 +47,43 @@ function App() {
         <Popup />
         <LoadingView />
         <LayerController />
-        <Suspense fallback={<Spinner text="로딩중입니다." />}>
-          <Routes>
-            <Route path="/" element={<Wrapper />}>
-              <Route
-                index
-                element={
-                  <Suspense fallback={<Spinner text="로딩중입니다." />}>
-                    <MainPage />
-                  </Suspense>
-                }
-              />
-              <Route
-                path="store"
-                element={
-                  <Suspense fallback={<Spinner text="로딩중입니다." />}>
-                    <MarketPage />
-                  </Suspense>
-                }
-              />
-              <Route
-                path='productions/*'
-                element={
-                  <Suspense fallback={<Spinner text="로딩중입니다." />}>
-                    <ProductDetail />
-                  </Suspense>
-                }
-              />
-              <Route
-                path="experts"
-                element={
-                  <Suspense fallback={<Spinner text="로딩중입니다." />}>
-                    <></>
-                  </Suspense>
-                }
-              />
-            </Route>
-          </Routes>
-        </Suspense>
+        <Routes>
+          <Route path="/" element={<Wrapper />}>
+            <Route
+              index
+              element={
+                <Suspense fallback={<Spinner text="로딩중입니다." />}>
+                  <MainPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="productions/*"
+              element={
+                <Suspense fallback={<Spinner text="로딩중입니다." />}>
+                  <ProductDetail />
+                </Suspense>
+              }
+            />
+            <Route
+              path="experts"
+              element={
+                <Suspense fallback={<Spinner text="로딩중입니다." />}>
+                  <></>
+                </Suspense>
+              }
+            />
+          </Route>
+          <Route
+            path="store/*"
+            element={
+              <Suspense fallback={<Spinner text="로딩중입니다." />}>
+                <Header />
+                <MarketPage />
+              </Suspense>
+            }
+          />
+        </Routes>
       </ThemeProvider>
     </BrowserRouter>
   );

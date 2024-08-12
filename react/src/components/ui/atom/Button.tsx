@@ -105,67 +105,67 @@ const BtnColor = (color?: ButtonColor) => {
   }
 };
 
-const BtnSize = (btnSize?: ButtonSize, thin?: boolean, ellipsis?: boolean) => {
+const btnSize = (btnsize?: ButtonSize, thin?: boolean, ellipsis?: boolean) => {
   const theme = useTheme() as Theme;
 
-  switch (btnSize) {
-    case "lg":
+  switch (btnsize) {
+    case 'lg':
       return css`
         padding: 0 25px;
-        border-radius: ${ellipsis ? "48px" : "10px"};
-        line-height: ${thin ? "58px" : "56px"};
+        border-radius: ${ellipsis ? '48px' : '10px'};
+        line-height: ${thin ? '58px' : '56px'};
         font-size: ${theme.fontSize.text.lg};
         font-weight: ${theme.fontWeight.bold};
       `;
-    case "md":
+    case 'md':
       return css`
         padding: 0 25px;
-        border-radius: ${ellipsis && "48px"};
-        line-height: ${thin ? "48px" : "46px"};
+        border-radius: ${ellipsis && '48px'};
+        line-height: ${thin ? '48px' : '46px'};
         font-size: ${theme.fontSize.text.lg};
         font-weight: ${theme.fontWeight.bold};
       `;
-    case "normal":
+    case 'normal':
       return css`
         padding: 0 20px;
-        border-radius: ${ellipsis && "18px"};
-        line-height: ${thin ? "38px" : "36px"};
+        border-radius: ${ellipsis && '18px'};
+        line-height: ${thin ? '38px' : '36px'};
         font-size: ${theme.fontSize.text.lg};
       `;
-    case "sm":
+    case 'sm':
       return css`
         padding: 0 15px;
-        border-radius: ${ellipsis && "18px"};
-        line-height: ${thin ? "36px" : "34px"};
+        border-radius: ${ellipsis && '18px'};
+        line-height: ${thin ? '36px' : '34px'};
         font-size: ${theme.fontSize.text.lg};
       `;
-    case "xsm":
+    case 'xsm':
       return css`
         padding: 0 15px;
-        border-radius: ${ellipsis && "18px"};
-        line-height: ${thin ? "34px" : "32px"};
+        border-radius: ${ellipsis && '18px'};
+        line-height: ${thin ? '34px' : '32px'};
         font-size: ${theme.fontSize.text.md};
       `;
-    case "xs":
+    case 'xs':
       return css`
         padding: 0 5px;
-        border-radius: ${ellipsis && "14px"};
-        line-height: ${thin ? "24px" : "22px"};
+        border-radius: ${ellipsis && '14px'};
+        line-height: ${thin ? '24px' : '22px'};
         font-size: ${theme.fontSize.text.sm};
       `;
   }
 };
 
-const BtnIconCommon = css<{ btnSize?: ButtonSize }>`
-  content: "";
+const BtnIconCommon = css<{btnsize?: ButtonSize}>`
+  content: '';
   display: inline-block;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100%;
 
-  ${props => {
-    switch (props.btnSize) {
-      case "xs":
+  ${(props) => {
+    switch (props.btnsize) {
+      case 'xs':
         return css`
           width: 12px;
           height: 12px;
@@ -180,14 +180,14 @@ const BtnIconCommon = css<{ btnSize?: ButtonSize }>`
 `;
 
 const BtnIcon = (
-  iconName?: ButtonIcon | "Category",
+  iconname?: ButtonIcon | 'Category',
   color?: ButtonColor,
-  btnType?: ButtonType,
+  btntype?: ButtonType,
   disabled?: boolean,
-  isHover?: boolean
+  isHover?: boolean,
 ) => {
   let iconColor;
-  if (btnType === "border" || btnType === "ghost") {
+  if (btntype === 'border' || btntype === 'ghost') {
     if (disabled) {
       iconColor = BtnColor(color)?.disabled;
     } else if (isHover) {
@@ -196,121 +196,121 @@ const BtnIcon = (
       iconColor = BtnColor(color)?.bg;
     }
   } else {
-    iconColor = "#fff";
+    iconColor = '#fff';
   }
 
-  switch (iconName) {
-    case "Delete":
+  switch (iconname) {
+    case 'Delete':
       return css`
         background-image: url(${SVG.Delete(iconColor)});
       `;
-    case "Excel":
+    case 'Excel':
       return css`
         background-image: url(${SVG.Excel(iconColor)});
       `;
-    case "Plus":
+    case 'Plus':
       return css`
         background-image: url(${SVG.Plus(iconColor)});
       `;
-    case "Setting":
+    case 'Setting':
       return css`
         background-image: url(${SVG.Setting(iconColor)});
       `;
-    case "Memo":
+    case 'Memo':
       return css`
         background-image: url(${SVG.Memo(iconColor)});
       `;
-    case "Closed":
+    case 'Closed':
       return css`
         background-image: url(${SVG.Closed(iconColor)});
       `;
-    case "NextArrow":
+    case 'NextArrow':
       return css`
         background-image: url(${SVG.NextArrow(iconColor)});
       `;
-    case "PrevArrow":
+    case 'PrevArrow':
       return css`
         background-image: url(${SVG.NextArrow(iconColor)});
         transform: rotate(180deg);
       `;
-    case "DownArrow":
+    case 'DownArrow':
       return css`
         background-image: url(${SVG.DownArrow(iconColor)});
       `;
-    case "UpArrow":
+    case 'UpArrow':
       return css`
         background-image: url(${SVG.DownArrow(iconColor)});
         transform: rotate(180deg);
       `;
-    case "Search":
+    case 'Search':
       return css`
         background-image: url(${SVG.Search(iconColor)});
       `;
-    case "Edit":
+    case 'Edit':
       return css`
         background-image: url(${SVG.Edit(iconColor)});
         background-size: 22px;
       `;
-    case "Star":
+    case 'Star':
       return css`
         background-image: url(${SVG.Star(iconColor)});
       `;
-    case "Save":
+    case 'Save':
       return css`
         background-image: url(${SVG.Save(iconColor)});
       `;
-    case "Refresh":
+    case 'Refresh':
       return css`
         background-image: url(${SVG.Refresh(iconColor)});
       `;
-    case "Reset":
+    case 'Reset':
       return css`
         background-image: url(${SVG.Reset(iconColor)});
       `;
-    case "Delivery":
+    case 'Delivery':
       return css`
         background-image: url(${SVG.Delivery(iconColor)});
         width: 20px;
         height: 20px;
         background-size: 20px;
       `;
-    case "PC":
+    case 'PC':
       return css`
         background-image: url(${SVG.PC(iconColor)});
       `;
-    case "Folder":
+    case 'Folder':
       return css`
         background-image: url(${SVG.Folder(iconColor)});
       `;
-    case "Code":
+    case 'Code':
       return css`
         background-image: url(${SVG.Code(iconColor)});
       `;
-    case "Out":
+    case 'Out':
       return css`
         background-image: url(${SVG.Out(iconColor)});
       `;
-    case "Link":
+    case 'Link':
       return css`
         background-image: url(${SVG.Link(iconColor)});
       `;
-    case "Box":
+    case 'Box':
       return css`
         background-image: url(${SVG.Box(iconColor)});
       `;
-    case "Power":
+    case 'Power':
       return css`
         background-image: url(${SVG.Power(iconColor)});
       `;
-    case "PasswordShow":
+    case 'PasswordShow':
       return css`
         background-image: url(${SVG.PasswordShow(iconColor)});
       `;
-    case "PasswordHide":
+    case 'PasswordHide':
       return css`
         background-image: url(${SVG.PasswordHide(iconColor)});
       `;
-    case "Phone":
+    case 'Phone':
       return css`
         background-image: url(${SVG.Phone(iconColor)});
         width: 20px;
@@ -321,22 +321,22 @@ const BtnIcon = (
 };
 
 const ButtonComponent = styled.button<{
-  btnType?: ButtonType;
+  btntype?: ButtonType;
   color?: ButtonColor;
-  btnSize?: ButtonSize;
+  btnsize?: ButtonSize;
   thin?: boolean;
   ellipsis?: boolean;
-  iconPosition?: "before" | "after" | "center";
-  iconName?: ButtonIcon | "Category";
+  iconposition?: 'before' | 'after' | 'center';
+  iconname?: ButtonIcon | 'Category';
   disabled?: boolean;
-  isHover?: boolean;
+  ishover?: boolean;
   maxWidth?: string;
 }>`
   ${BtnCommon};
 
-  ${props => {
-    switch (props.btnType) {
-      case "normal":
+  ${(props) => {
+    switch (props.btntype) {
+      case 'normal':
         return css`
           border-color: ${BtnColor(props.color)?.bg};
           background-color: ${BtnColor(props.color)?.bg};
@@ -354,7 +354,7 @@ const ButtonComponent = styled.button<{
             background-color: ${BtnColor(props.color)?.disabled};
           }
         `;
-      case "border":
+      case 'border':
         return css`
           border-color: ${BtnColor(props.color)?.bg};
           background-color: #fff;
@@ -372,7 +372,7 @@ const ButtonComponent = styled.button<{
             color: ${BtnColor(props.color)?.disabled};
           }
         `;
-      case "ghost":
+      case 'ghost':
         return css`
           border: 0;
           background-color: transparent;
@@ -393,77 +393,55 @@ const ButtonComponent = styled.button<{
     }
   }};
 
-  ${props => {
-    return BtnSize(props.btnSize, props.thin, props.ellipsis);
+  ${(props) => {
+    return btnSize(props.btnsize, props.thin, props.ellipsis);
   }}
 
-  ${props => {
-    switch (props.iconPosition) {
-      case "after":
+  ${(props) => {
+    switch (props.iconposition) {
+      case 'after':
         return css`
           &::after {
             ${BtnIconCommon}
             margin-left: 5px;
-            ${BtnIcon(
-              props.iconName,
-              props.color,
-              props.btnType,
-              props.disabled,
-              props.isHover
-            )}
+            ${BtnIcon(props.iconname, props.color, props.btntype, props.disabled, props.isHover)}
           }
         `;
-      case "before":
+      case 'before':
         return css`
           &::before {
             ${BtnIconCommon}
             margin-right: 5px;
-            ${BtnIcon(
-              props.iconName,
-              props.color,
-              props.btnType,
-              props.disabled,
-              props.isHover
-            )}
+            ${BtnIcon(props.iconname, props.color, props.btntype, props.disabled, props.isHover)}
           }
         `;
-      case "center":
+      case 'center':
         return css`
           &::before {
             margin: 5px 0;
             ${BtnIconCommon}
-            ${BtnIcon(
-              props.iconName,
-              props.color,
-              props.btnType,
-              props.disabled,
-              props.isHover
-            )};
+            ${BtnIcon(props.iconname, props.color, props.btntype, props.disabled, props.isHover)};
           }
         `;
     }
   }}
 `;
 
-export interface IButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   maxWidth?: string;
   text?: string;
-  btnType?: ButtonType;
-  btnSize?: ButtonSize;
+  btntype?: ButtonType;
+  btnsize?: ButtonSize;
   color?: ButtonColor;
   thin?: boolean;
   ellipsis?: boolean;
-  iconPosition?: "before" | "after" | "center";
-  iconName?: ButtonIcon | "Category";
+  iconposition?: 'before' | 'after' | 'center';
+  iconname?: ButtonIcon | 'Category';
   isHover?: boolean;
   disabled?: boolean;
 }
 
-function Button(
-  props: IButtonProps,
-  ref?: React.ForwardedRef<HTMLButtonElement>
-): JSX.Element {
+function Button(props: IButtonProps, ref?: React.ForwardedRef<HTMLButtonElement>): JSX.Element {
   // 마우스 hover시 아이콘 컬러도 같이 변경되기 위한 state
   const [hover, setHover] = useState<boolean | undefined>(false);
   const hoverHandler = () => {
@@ -482,21 +460,21 @@ function Button(
         e.stopPropagation();
       }
     },
-    [props]
+    [props],
   );
   return (
     <ButtonComponent
-      btnType={props.btnType ? props.btnType : "normal"}
-      btnSize={props.btnSize ? props.btnSize : "normal"}
-      color={props.color ? props.color : "dark"}
+      btntype={props.btntype ? props.btntype : 'normal'}
+      btnsize={props.btnsize ? props.btnsize : 'normal'}
+      color={props.color ? props.color : 'dark'}
       thin={props.thin && props.thin}
       ellipsis={props.ellipsis && props.ellipsis}
-      iconPosition={props.iconPosition && props.iconPosition}
-      iconName={props.iconName && props.iconName}
+      iconposition={props.iconposition && props.iconposition}
+      iconname={props.iconname && props.iconname}
       onMouseEnter={hoverHandler}
       onMouseLeave={leaveHandler}
       onClick={clickHandler}
-      isHover={hover}
+      ishover={hover}
       disabled={props.disabled && props.disabled}
       ref={ref}
       onMouseUp={props.onMouseUp}

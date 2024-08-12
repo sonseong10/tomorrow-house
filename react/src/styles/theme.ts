@@ -1,10 +1,5 @@
-import baseStyled, { type ThemedStyledInterface } from "styled-components";
-import {
-  commonFonts,
-  commonColors,
-  commonHoverColors,
-  commonDisabledColors,
-} from "../commons/styles/commonTheme";
+import baseStyled from 'styled-components';
+import {commonFonts, commonColors, commonHoverColors, commonDisabledColors} from '../commons/styles/commonTheme';
 
 /**
  * common에서 사용하는 테마 외의 값이 있을 경우 추가
@@ -23,8 +18,8 @@ const fonts = {
 
 const colors = {
   ...commonColors,
-  primary: "#35C5F0",
-  btnPrimary: "#35C5F0",
+  primary: '#35C5F0',
+  btnPrimary: '#35C5F0',
 };
 
 const hoverColors = {
@@ -47,8 +42,8 @@ const darkColors = {
   ...colors,
   ...hoverColors,
   ...disabledColors,
-  bodyBackground: "#121212",
-  fontPrimary: "#fff",
+  bodyBackground: '#121212',
+  fontPrimary: '#fff',
 };
 
 /**
@@ -75,4 +70,4 @@ export const darkTheme: Theme = {
  * 테마 타입 설정
  */
 export type Theme = typeof lightTheme;
-export const styled = baseStyled as ThemedStyledInterface<Theme>;
+export const styled = baseStyled;

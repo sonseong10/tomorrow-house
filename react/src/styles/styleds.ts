@@ -1,13 +1,13 @@
 import { css } from "styled-components";
 import type {
   FlexAlignType,
-  FlexContentType,
+  flexcontentType,
   FontAlignType,
   FontSizeNomalType,
   FontSizeTitleType,
   FontWeightType,
   Size,
-} from "./stylesVo";
+} from './stylesVo';
 
 /**
  * 상속시킬 스타일(css) 정의 파일
@@ -112,22 +112,22 @@ export const FlexWrap = css<{ flexWrap?: boolean }>`
 
 // flex 메인축 방향 정렬
 export const FlexJustifyContent = css<{
-  flexContent?: FlexContentType;
+  flexcontent?: flexcontentType;
 }>`
-  justify-content: ${props => {
-    switch (props.flexContent) {
-      case "start":
-        return "flex-start";
-      case "center":
-        return "center";
-      case "end":
-        return "flex-end";
-      case "between":
-        return "space-between";
-      case "around":
-        return "space-around";
+  justify-content: ${(props) => {
+    switch (props.flexcontent) {
+      case 'start':
+        return 'flex-start';
+      case 'center':
+        return 'center';
+      case 'end':
+        return 'flex-end';
+      case 'between':
+        return 'space-between';
+      case 'around':
+        return 'space-around';
       default:
-        return "flex-start";
+        return 'flex-start';
     }
   }};
 `;

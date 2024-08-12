@@ -9,7 +9,6 @@ import {
   DeletePopupButtonGroup,
   type IconPopupProps,
 } from './components/IconPopup';
-import {ScriptPopupButton} from './components/ScriptPopup';
 import Button from '../../components/ui/atom/Button';
 
 /**
@@ -23,7 +22,7 @@ export interface IProductCallBack<U> {
 }
 const commonButton = {
   color: 'primary',
-  btnSize: 'md',
+  btnsize: 'md',
   ellipsis: true,
   maxWidth: '125px',
 };
@@ -58,7 +57,7 @@ export function useImagePopup() {
         data,
         isClose: true,
         callBack: callBack,
-      })
+      }),
     );
   };
   return image;
@@ -80,7 +79,7 @@ export function useGridPopup() {
         callBack: callBack,
         buttonComponent: Button,
         buttons: [{...commonButton, text: '확인', state: ButtonState.OK}],
-      })
+      }),
     );
   };
 
@@ -96,7 +95,7 @@ export function useIConPopup() {
     buttonType: 'alert' | 'confirm' | 'delete' = 'alert',
     data?: IconPopupProps,
     title?: string,
-    callBack?: (v?: ButtonState) => void
+    callBack?: (v?: ButtonState) => void,
   ) => {
     const ButtonComponent = () => {
       switch (buttonType) {
@@ -118,37 +117,11 @@ export function useIConPopup() {
         data,
         callBack: callBack,
         buttonWrapper: ButtonComponent(),
-      })
+      }),
     );
   };
 
   return IconPopup;
 }
 
-/**
- * 스크립트 레이어팝업
- */
-export const useScriptPopup = () => {
-  const dispatch = useDispatch();
 
-  return async (
-    data?: {
-      type: 'getshop' | 'viewus' | 'car' | 'ad';
-      code: string | number;
-    },
-    title?: string,
-    callBack?: (v?: ButtonState) => void
-  ) => {
-    dispatch(
-      rdxPopupOpen({
-        width: 560,
-        type: PopupType.SCRIPT,
-        title: title,
-        data,
-        isClose: true,
-        callBack,
-        buttonWrapper: ScriptPopupButton,
-      })
-    );
-  };
-};

@@ -26,7 +26,7 @@ interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
 // TODO: InputText type에 text 디폴트로 설정 필요
 
 function InputText(props: IProps): JSX.Element {
-  const [prev, setPrev] = useState<NodeJS.Timeout>();
+  const [prev, setPrev] = useState<number>();
 
   const test = (value?: string) => {
     if (value) {
