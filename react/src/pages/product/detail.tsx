@@ -9,12 +9,54 @@ import SwiperCore from 'swiper';
 
 import {FreeMode, Thumbs} from 'swiper/modules';
 import styled from 'styled-components';
+import SVG from '../../commons/styles/svgIcon';
+import {Link} from 'react-router-dom';
+import {UiSelectBox} from '../../components/ui/atom/SelectBox';
+import Button from '../../components/ui/atom/Button';
 
 SwiperCore.use([FreeMode, Thumbs]);
+
+const ProductionSellingOverviewCategory = styled.nav`
+  margin-top: 20px;
+  padding: 0;
+  border: none;
+
+  ol {
+    display: flex;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      color: var(--font-sub-grey);
+
+      &:not(:last-child)::after {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin: 0 5px;
+        background: url(${SVG.NextArrow('#898989')}) no-repeat center center;
+        background-size: 16px;
+        content: '';
+      }
+    }
+  }
+`;
+
+const ProductionSellingContainer = styled.div`
+  margin: 40px 0;
+  display: flex;
+
+  > div {
+    padding: 0 10px;
+  }
+`;
 
 const ProductionSellingCover = styled.div`
   display: flex;
   flex-direction: row-reverse;
+  margin-right: 30px;
 `;
 
 const ProductionSellingCoverImage = styled.div`
@@ -43,8 +85,7 @@ const ProductionSellingCoverImageList = styled.div`
     margin-right: 10px;
     div.swiper-slide {
       position: relative;
-      width: 61px;
-      height: 56px;
+      width: 53px;
       border-radius: 4px;
       overflow: hidden;
       cursor: pointer;
@@ -81,15 +122,15 @@ function ProductDetail() {
 
   return (
     <div>
-      <nav className="categoryGroup">
+      <ProductionSellingOverviewCategory>
         <ol>
           <li>생활용품</li>
           <li>수건·타월</li>
           <li>세면타월</li>
         </ol>
-      </nav>
+      </ProductionSellingOverviewCategory>
 
-      <div>
+      <ProductionSellingContainer>
         <ProductionSellingCover>
           <ProductionSellingCoverImage>
             <Swiper {...initControl}>
@@ -124,7 +165,7 @@ function ProductDetail() {
               onSwiper={setThumbsSwiper}
               loop={true}
               spaceBetween={10}
-              slidesPerView={8}
+              slidesPerView={9}
               freeMode={true}
               direction="vertical"
               modules={[FreeMode, Thumbs]}
@@ -159,8 +200,73 @@ function ProductDetail() {
           </ProductionSellingCoverImageList>
         </ProductionSellingCover>
 
-        <div>상품정보</div>
-      </div>
+        <div>
+          <div>
+            <div>
+              <p>아에홈</p>
+              <div>
+                <h1>크롬출시! 키노 LED 미니 머쉬룸 무선 조명 인테리어 2sizes(밝기/빛색 변경)</h1>
+              </div>
+            </div>
+            <div>
+              <p>675개의 리뷰</p>
+              <p>
+                <span>54%</span>
+                <del>60,000원</del>
+              </p>
+              <div>
+                <strong>27,400원</strong>
+              </div>
+            </div>
+            <div>
+              <table>
+                <thead></thead>
+                <tbody>
+                  <tr>
+                    <td>혜택</td>
+                    <td>28P 적립 (WELCOME 0.1% 적립)</td>
+                  </tr>
+                  <tr>
+                    <td>배송</td>
+                    <td>
+                      <span>2,500원</span>
+                      <p>
+                        선결제 17:00 까지 결제 시 <span>오늘 출발</span>
+                      </p>
+                      <div>
+                        <span>일반택배</span>
+                        <span> 제주도/도서산간 지역 3,000원</span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <Link to={'#'}>
+              <div>레나에너지</div>
+              <div>브랜드홈</div>
+            </Link>
+          </div>
+          <div>
+            <section>
+              <UiSelectBox id="1" data={['dsadsadsa', 'dsadsa']} />
+              <UiSelectBox id="1" data={['dsadsadsa', 'dsadsa']} />
+              <UiSelectBox id="1" data={['dsadsadsa', 'dsadsa']} />
+            </section>
+
+            <div>
+              <span>주문금액</span>
+              <strong>0원</strong>
+            </div>
+
+            <div>
+              <Button text="장바구니" btntype="border" btnsize="lg" thin color="primary" />
+              <Button text="바로구매" btnsize="lg" thin color="primary" />
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </ProductionSellingContainer>
 
       <div>텝메뉴</div>
 
