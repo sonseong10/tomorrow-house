@@ -57,14 +57,7 @@ function App() {
                 </Suspense>
               }
             />
-            <Route
-              path="productions/*"
-              element={
-                <Suspense fallback={<Spinner text="로딩중입니다." />}>
-                  <ProductDetail />
-                </Suspense>
-              }
-            />
+
             <Route
               path="experts"
               element={
@@ -80,6 +73,15 @@ function App() {
               <Suspense fallback={<Spinner text="로딩중입니다." />}>
                 <Header />
                 <MarketPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="productions/*"
+            element={
+              <Suspense fallback={<Spinner text="로딩중입니다." />}>
+                <Header />
+                <ProductDetail />
               </Suspense>
             }
           />
