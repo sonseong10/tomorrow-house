@@ -20,34 +20,35 @@ export type ButtonColor =
 export type ButtonSize = "lg" | "md" | "normal" | "sm" | "xsm" | "xs";
 
 export type ButtonIcon =
-  | "Delete"
-  | "Plus"
-  | "Setting"
-  | "Excel"
-  | "Memo"
-  | "Closed"
-  | "NextArrow"
-  | "PrevArrow"
-  | "DownArrow"
-  | "UpArrow"
-  | "Search"
-  | "Edit"
-  | "Star"
-  | "Save"
-  | "Refresh"
-  | "Reset"
-  | "Delivery"
-  | "PC"
-  | "Folder"
-  | "Out"
-  | "Code"
-  | "Box"
-  | "Link"
-  | "Power"
-  | "PasswordShow"
-  | "PasswordHide"
-  | "Check"
-  | "Phone";
+  | 'Delete'
+  | 'Plus'
+  | 'Setting'
+  | 'Excel'
+  | 'Memo'
+  | 'Closed'
+  | 'NextArrow'
+  | 'PrevArrow'
+  | 'DownArrow'
+  | 'UpArrow'
+  | 'Search'
+  | 'Edit'
+  | 'Star'
+  | 'Save'
+  | 'Refresh'
+  | 'Reset'
+  | 'Delivery'
+  | 'PC'
+  | 'Folder'
+  | 'Out'
+  | 'Code'
+  | 'Box'
+  | 'Link'
+  | 'Power'
+  | 'PasswordShow'
+  | 'PasswordHide'
+  | 'Check'
+  | 'Phone'
+  | 'BookMark';
 
 export type CommmonSVGType = "close";
 

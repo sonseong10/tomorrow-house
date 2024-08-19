@@ -317,6 +317,10 @@ const BtnIcon = (
         height: 20px;
         background-size: 12px;
       `;
+    case 'BookMark':
+      return css`
+        background-image: url(${SVG.BookMark(iconColor)});
+      `;
   }
 };
 
@@ -404,7 +408,7 @@ const ButtonComponent = styled.button<{
           &::after {
             ${BtnIconCommon}
             margin-left: 5px;
-            ${BtnIcon(props.iconname, props.color, props.btntype, props.disabled, props.isHover)}
+            ${BtnIcon(props.iconname, props.color, props.btntype, props.disabled, props.ishover)}
           }
         `;
       case 'before':
@@ -412,7 +416,7 @@ const ButtonComponent = styled.button<{
           &::before {
             ${BtnIconCommon}
             margin-right: 5px;
-            ${BtnIcon(props.iconname, props.color, props.btntype, props.disabled, props.isHover)}
+            ${BtnIcon(props.iconname, props.color, props.btntype, props.disabled, props.ishover)}
           }
         `;
       case 'center':
@@ -420,7 +424,7 @@ const ButtonComponent = styled.button<{
           &::before {
             margin: 5px 0;
             ${BtnIconCommon}
-            ${BtnIcon(props.iconname, props.color, props.btntype, props.disabled, props.isHover)};
+            ${BtnIcon(props.iconname, props.color, props.btntype, props.disabled, props.ishover)};
           }
         `;
     }
